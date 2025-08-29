@@ -296,7 +296,7 @@ As an example, let’s search for **NDVI collections** by filtering based on the
 
 ```{python, eval=FALSE}
 ndvi_collection = []
-for icol in collections:
+for icol in root_catalog.get_all_collections():
     if 'NDVI' in icol.description:
         ndvi_collection.append(icol)
 
