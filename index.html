@@ -1307,7 +1307,7 @@ of interest to see whether the dataset covers it.</p>
 <span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a></span>
 <span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>wageningen_collection <span class="op">=</span> []</span>
 <span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="cf">for</span> icol <span class="kw">in</span> collections:</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="cf">for</span> icol <span class="kw">in</span> root_catalog.get_all_collections():</span>
 <span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>    bbox <span class="op">=</span> icol.extent.spatial.bboxes[<span class="dv">0</span>]</span>
 <span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a></span>
 <span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a>    collection_extent <span class="op">=</span> Polygon([</span>
@@ -1338,7 +1338,7 @@ to see if the dataset is valid for that time period.</p>
 <span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a></span>
 <span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>collection_20220101 <span class="op">=</span> []</span>
 <span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="cf">for</span> icol <span class="kw">in</span> collections:</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="cf">for</span> icol <span class="kw">in</span> root_catalog.get_all_collections():</span>
 <span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>    start, end <span class="op">=</span> icol.extent.temporal.intervals[<span class="dv">0</span>]</span>
 <span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>    </span>
 <span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a>    is_covered <span class="op">=</span> start <span class="op">&lt;=</span> date_to_check <span class="op">&lt;=</span> end</span>

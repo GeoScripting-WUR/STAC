@@ -323,7 +323,7 @@ wageningen_poly = geom.Polygon([
 
 wageningen_collection = []
 
-for icol in collections:
+for icol in root_catalog.get_all_collections():
     bbox = icol.extent.spatial.bboxes[0]
 
     collection_extent = Polygon([
@@ -355,7 +355,7 @@ date_to_check = datetime(2022, 1, 1, tzinfo=timezone.utc)
 
 collection_20220101 = []
 
-for icol in collections:
+for icol in root_catalog.get_all_collections():
     start, end = icol.extent.temporal.intervals[0]
     
     is_covered = start <= date_to_check <= end
